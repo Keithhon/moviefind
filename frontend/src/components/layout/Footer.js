@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="text-center md:text-right">
             <div className="flex items-center justify-center md:justify-end mb-3">
               <a 
-                href="https://github.com/yourusername/MovieFind" 
+                href="https://github.com/Keithhon/moviefind" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors duration-300 p-1 hover:bg-gray-700 rounded-full"
