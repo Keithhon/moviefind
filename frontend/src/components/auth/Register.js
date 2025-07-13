@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { authAPI } from '../../services/api';
 import { FiUser, FiMail, FiLock, FiUserPlus } from 'react-icons/fi';
 
 const Register = ({ login }) => {
@@ -44,7 +44,7 @@ const Register = ({ login }) => {
     try {
       // Send registration request (exclude confirmPassword)
       const registerData = { username, email, password };
-      const res = await axios.post('http://localhost:5000/api/auth/register', registerData);
+      const res = await authAPI.register(registerData);
       
       // Handle successful registration
       login(res.data.user, res.data.token);

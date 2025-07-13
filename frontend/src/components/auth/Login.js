@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { authAPI } from '../../services/api';
 import { FiUser, FiLock, FiLogIn } from 'react-icons/fi';
 
 const Login = ({ login }) => {
@@ -30,7 +30,7 @@ const Login = ({ login }) => {
 
     try {
       // Send login request
-      const res = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const res = await authAPI.login(formData);
       
       // Handle successful login
       login(res.data.user, res.data.token);
